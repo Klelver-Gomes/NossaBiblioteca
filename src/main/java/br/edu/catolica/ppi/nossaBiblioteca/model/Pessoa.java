@@ -2,6 +2,7 @@ package br.edu.catolica.ppi.nossaBiblioteca.model;
 
 import br.edu.catolica.ppi.nossaBiblioteca.enums.Genero;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +15,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
+
 public abstract class Pessoa {
 
     @Id
@@ -26,13 +28,14 @@ public abstract class Pessoa {
     @Column(unique = true)
     private String cpf;
 
+
     @Embedded
     private Endereco endereco;
 
     @Embedded
     private Contato contato;
 
-    @Enumerated(EnumType.ORDINAL)
-    private Genero genero;
+
+    private Integer genero;
 
 }
