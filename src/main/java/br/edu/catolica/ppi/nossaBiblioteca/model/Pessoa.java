@@ -1,6 +1,9 @@
 package br.edu.catolica.ppi.nossaBiblioteca.model;
 
 import br.edu.catolica.ppi.nossaBiblioteca.enums.Genero;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,6 +25,8 @@ public abstract class Pessoa {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private int matricula;
+
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy")
     private LocalDate dataNascimento;
     private String nome;
 
