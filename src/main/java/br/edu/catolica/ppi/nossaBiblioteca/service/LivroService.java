@@ -12,7 +12,7 @@ import java.util.UUID;
 @Service
 public class LivroService {
 
-    @Autowired //Injetando a classe repository
+    @Autowired
     LivroRepository livroRepository;
 
     public Livro saveOrUpdate(Livro livro){
@@ -23,8 +23,8 @@ public class LivroService {
         return livroRepository.findAll();
     }
 
-    public Livro findByISBN(int isbn){
-        return livroRepository.findByISBN(isbn);
+    public Livro findByIsbn(Integer isbn){
+        return livroRepository.findByIsbn(isbn);
     }
 
     public String findByName(String nome){

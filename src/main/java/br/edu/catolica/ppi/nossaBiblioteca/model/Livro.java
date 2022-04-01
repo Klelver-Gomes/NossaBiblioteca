@@ -22,6 +22,6 @@ public class Livro {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
     private String nome;
-    private int esbn;
+    private int isbn;
 
 }

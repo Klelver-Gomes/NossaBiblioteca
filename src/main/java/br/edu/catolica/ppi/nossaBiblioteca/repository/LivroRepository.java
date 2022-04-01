@@ -9,7 +9,7 @@ import java.util.UUID;
 
 @Repository
 public interface LivroRepository extends JpaRepository<Livro , UUID> {
-    Livro findByISBN(int isbn);
+    Livro findByIsbn(Integer isbn);
 
     @Query("select a.nome from Livro a where a.nome like %:nome%")
     String findByNome(String nome);
