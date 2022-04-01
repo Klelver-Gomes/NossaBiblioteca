@@ -1,6 +1,8 @@
 package br.edu.catolica.ppi.nossaBiblioteca.enums;
 
+import javax.persistence.Embeddable;
 import java.util.Arrays;
+
 
 public enum Genero {
 
