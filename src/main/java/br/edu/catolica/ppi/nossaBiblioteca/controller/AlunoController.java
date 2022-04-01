@@ -30,17 +30,26 @@ public class AlunoController {
     }
 
     @GetMapping("/cpf/{cpf}")
-    ResponseEntity getByCpf(@PathVariable("cpf") String cpf){
+    public ResponseEntity getByCpf(@PathVariable("cpf") String cpf){
         return ResponseEntity.ok().body(alunoService.findByCpf(cpf));
     }
 
     @GetMapping("/nome/{nome}")
-    ResponseEntity getByNome(@PathVariable("nome") String nome){
+    public ResponseEntity getByNome(@PathVariable("nome") String nome){
         return  ResponseEntity.ok().body(alunoService.FindByNome(nome));
     }
 
     @GetMapping("/findAll")
-    ResponseEntity findAll(){
+    public ResponseEntity findAll(){
         return ResponseEntity.ok().body(alunoService.getAll());
     }
+
+    @DeleteMapping
+    public ResponseEntity delete(@RequestBody Aluno aluno){
+        alunoService.remove(aluno);
+        return ResponseEntity.noContent().build();
+    }
+
+
+
 }

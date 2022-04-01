@@ -40,4 +40,10 @@ public class AlunoService {
     public List<Aluno> getAll(){
         return alunoRepository.findAll();
     }
+
+    public void remove(Aluno aluno){
+        Aluno a = findByID(aluno.getId());
+        alunoRepository.delete(a);
+    }
+
 }
