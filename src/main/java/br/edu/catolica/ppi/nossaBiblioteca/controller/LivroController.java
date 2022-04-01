@@ -3,10 +3,7 @@ package br.edu.catolica.ppi.nossaBiblioteca.controller;
 import br.edu.catolica.ppi.nossaBiblioteca.model.Livro;
 import br.edu.catolica.ppi.nossaBiblioteca.service.LivroService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/livro")
@@ -23,5 +20,12 @@ public class LivroController {
         return ResponseEntity.ok()
                 .body(livroService.saveOrUpdate(livro));
     }
+
+    @GetMapping("/getAllLivro")
+    public ResponseEntity getAllLivro(){
+        return ResponseEntity.ok().body(livroService.getAllLivro());
+    }
+
+
 
 }
