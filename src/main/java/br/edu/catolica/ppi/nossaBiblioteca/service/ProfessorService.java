@@ -2,11 +2,13 @@ package br.edu.catolica.ppi.nossaBiblioteca.service;
 
 import br.edu.catolica.ppi.nossaBiblioteca.model.Professor;
 import br.edu.catolica.ppi.nossaBiblioteca.repository.ProfessorRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+@Service
 public class ProfessorService {
 
     private  final ProfessorRepository professorRepository;
@@ -35,6 +37,7 @@ public class ProfessorService {
     public List<Professor> getAll(){
         return professorRepository.findAll();
     }
+
 
     public void remove (Professor professor){
         Professor p = findById(professor.getId());
