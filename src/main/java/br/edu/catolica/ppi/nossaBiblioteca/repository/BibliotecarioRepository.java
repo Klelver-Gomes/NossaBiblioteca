@@ -15,4 +15,5 @@ public interface BibliotecarioRepository extends JpaRepository<Bibliotecario, UU
     @Query("select a.nome from Bibliotecario a where a.nome like %:nome%")
     String findByNome(String nome);
 
+
 }
