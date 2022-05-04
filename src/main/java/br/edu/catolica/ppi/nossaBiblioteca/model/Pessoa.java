@@ -10,6 +10,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -19,7 +20,8 @@ import java.util.UUID;
 @Data
 @Inheritance(strategy = InheritanceType.JOINED)
 
-public abstract class Pessoa {
+
+public abstract class Pessoa{
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
