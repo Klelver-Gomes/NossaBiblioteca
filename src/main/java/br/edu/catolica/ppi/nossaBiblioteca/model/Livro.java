@@ -23,5 +23,6 @@ public class Livro {
     private UUID id;
     private String nome;
     private int isbn;
+    private int quantidade;
 
 }

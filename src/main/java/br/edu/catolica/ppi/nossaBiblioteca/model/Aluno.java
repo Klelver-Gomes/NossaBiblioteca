@@ -23,7 +23,7 @@ public class Aluno extends Pessoa {
     private String curso;
     private int periodo;
 
-    @ManyToMany(cascade = CascadeType.ALL)
-    private List<Livro> livros;
+//    @ManyToMany(cascade = CascadeType.ALL)
+//    private List<Livro> livros;
 
 }
